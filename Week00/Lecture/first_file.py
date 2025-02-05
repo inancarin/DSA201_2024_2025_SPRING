@@ -13,10 +13,9 @@ def anotherFunc(s):
     else:
         print("The length of the string is not greater than 5")
 
-
 # main part
 x = 10
 y = 20
 someFunc(x, y)
-anotherFunc("dsa201")
+anotherFunc("if100")
 print("End of the program")
