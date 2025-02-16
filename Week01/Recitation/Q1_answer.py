@@ -9,5 +9,6 @@ def getMoneySpent(keyboards, drives, b):
                 maxVal = k + d
     return maxVal
 
+
 res = getMoneySpent([40, 50, 60], [5, 8, 12], 60)
 print(res)
