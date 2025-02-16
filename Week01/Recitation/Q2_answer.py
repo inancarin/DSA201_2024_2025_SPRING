@@ -44,5 +44,6 @@ def sherlockAndAnagrams(s):
                 count += math.comb(v,2)
     return count
 
+# main
 print(sherlockAndAnagrams("cdcd"))
     
