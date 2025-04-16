@@ -17,6 +17,7 @@ class Student(Person):
         if course.availableSlot():
             course.incrNumberOfStudents()
             self.courses.append(course)
+            course.students.append(self)
             print(self.name, "registered to", course.code)
         else:
             print("No available slot for", course.code)
@@ -37,6 +38,7 @@ class Course:
         self.capacity = capacity
         self.enrolledStudentNumber = 0
         self.instructors = instructors
+        self.students = []
     
     def __str__(self):
         return "CRN: " + str(self.crn) + ", Code: " + self.code + ", Capacity: " + str(self.capacity)
@@ -52,6 +54,14 @@ class Course:
     
     def increaseCapacity(self, additionalCapacity):
         self.capacity += additionalCapacity
+    
+    def printAllStudents(self):
+        if len(self.students) == 0:
+            print("There is no student")
+        else:
+            print("The list of students enrolled to", self.code)
+            for s in self.students:
+                print(s)
 
 
 # main
@@ -73,3 +83,5 @@ s1.printCourses()
 
 f1 = FacultyMember("Inanc", 1, 70)
 f1.teachCourse(if100)
+
+if100.printAllStudents()
